@@ -6,9 +6,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AppConfig {
 
+//  @Beans are instance of a class managed by Spring Container
   @Bean
-  public ComponentWithDependencies componentWithDependencies(
-      ConstructorInjected constructorInjected, SetterInjected setterInjected) {
+  public ComponentWithDependencies componentWithDependencies(ConstructorInjected constructorInjected, SetterInjected setterInjected) {
+
     // creates the instance injecting the constructor dependency
     ComponentWithDependencies componentWithDependencies =
         new ComponentWithDependencies(constructorInjected);
@@ -22,16 +23,16 @@ public class AppConfig {
 
   @Bean
   public ConstructorInjected constructorInjected() {
-    return null;
+    return new ConstructorClass();
   }
 
   @Bean
   public FieldInjected fieldInjected() {
-    return null;
+    return new FieldClass();
   }
 
   @Bean
   public SetterInjected setterInjected() {
-    return null;
+    return new SetterClass();
   }
 }
