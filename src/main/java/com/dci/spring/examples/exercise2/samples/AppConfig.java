@@ -35,4 +35,10 @@ public class AppConfig {
   public SetterInjected setterInjected() {
     return new SetterClass();
   }
+
+  @Bean
+  public ValueInjection valueInjected() {
+    return new ValueClass();
+  }
+
 }
